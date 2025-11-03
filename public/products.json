@@ -2,49 +2,49 @@
   {
     "name": "Nike Revolution 6",
     "category": "deportivo",
-    "image": "/assets/img/img1.png",
+    "image": "/img/img1.png",
     "price": 59.99
   },
   {
     "name": "Vans Old Skool",
     "category": "casual",
-    "image": "/assets/img/img2.png",
+    "image": "/img/img2.png",
     "price": 69.00
   },
   {
     "name": "Zapatos Elegantes Oxford",
     "category": "formal",
-    "image": "/assets/img/img3.png",
+    "image": "/img/img3.png",
     "price": 58.40
   },
   {
     "name": "Clarks Bradstreet",
     "category": "formal",
-    "image": "/assets/img/img4.png",
+    "image": "/img/img4.png",
     "price": 95.50
   },
   {
     "name": "Royal Brown Brogues",
     "category": "formal",
-    "image": "/assets/img/img5.png",
+    "image": "/img/img5.png",
     "price": 135.99
   },
   {
     "name": "Nike Air Zoom Run",
     "category": "deportivo",
-    "image": "/assets/img/img6.png",
+    "image": "/img/img6.png",
     "price": 89.90
   },
   {
     "name": "Adidas UltraBoost X",
     "category": "deportivo",
-    "image": "/assets/img/img7.png",
+    "image": "/img/img7.png",
     "price": 140.00
   },
   {
     "name": "Casual Street White",
     "category": "casual",
-    "image": "/assets/img/img8.png",
+    "image": "/img/img8.png",
     "price": 65.40
   }
 ]
