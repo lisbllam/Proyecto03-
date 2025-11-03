@@ -1,5 +1,5 @@
 "use strict";
-import {fetchProducts} from "./functions.js";
+import {fetchProducts} from "/functions.js";
 
 const renderProducts = () => {
     fetchProducts('/products.json')
