@@ -2,7 +2,7 @@
 import {fetchProducts} from "./functions.js";
 
 const renderProducts = () => {
-    fetchProducts('./products.json')
+    fetchProducts('/products.json')
     .then(result => { 
         if (result.success){
         let container = document.getElementById('products-container');
