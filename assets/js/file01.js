@@ -13,8 +13,8 @@ const renderProducts = () => {
 
         products.forEach(product => {
           let productHTML = `
-            <div class="portfolio col-12 sm:col-6 lg:col-4" data-filter="[PRODUCT.CATEGORY]" >
-              <article class="group">
+            <div class="portfolio col-12 sm:col-6 lg:col-4" >
+              <article class="group" data-filter="[PRODUCT.CATEGORY]">
                 <div
                   class="relative overflow-hidden w-full aspect-[4/3] rounded-xl"
                 >
