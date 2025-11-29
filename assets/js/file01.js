@@ -56,6 +56,83 @@ const renderProducts = () => {
     });
 };
 
+const enableForm = () => {
+    const form = document.getElementById("form_voting");
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const rateId = document.getElementById("select_rate").value;
+
+        if (!rateId) {
+            alert("Por favor, selecciona una opción de experiencia.");
+            return;
+        }
+
+        const result = await saveVote(rateId);
+
+        if (result.status) {
+            alert("Voto registrado correctamente");
+            location.reload();
+        } else {
+            alert("Error al guardar el voto");
+        }
+    });
+};
+
+const displayVotes = async () => {
+    const result = await getVotes();
+    const resultsContainer = document.getElementById("results");
+
+    resultsContainer.innerHTML = `<p class="text-gray-500 text-center mt-2">Cargando...</p>`;
+
+    if (result.success) {
+        const votes = result.data;
+
+        const voteCount = {};
+
+        Object.keys(votes).forEach(key => {
+            const id = votes[key].rateId;
+            voteCount[id] = (voteCount[id] || 0) + 1;
+        });
+
+        let labels = {
+            exp1: "Excelente atención",
+            exp2: "Buena atención",
+            exp3: "Atención regular",
+            exp4: "Mala atención"
+        };
+
+        let tableHTML = `
+            <table border="1" cellpadding="8" class="w-full text-center">
+                <thead>
+                    <tr>
+                        <th>Experiencia</th>
+                        <th>Votos</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        Object.keys(voteCount).forEach(rate => {
+            tableHTML += `
+            <tr>
+                <td>${labels[rate] || rate}</td>
+                <td>${voteCount[rate]}</td>
+            </tr>`;
+        });
+
+        tableHTML += `</tbody></table>`;
+
+        resultsContainer.innerHTML = tableHTML;
+
+    } else {
+        resultsContainer.innerHTML = `<p>${result.message}</p>`;
+    }
+};
+
 (() => {
   renderProducts();
+  enableForm();
+  displayVotes();
 })();

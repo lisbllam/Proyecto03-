@@ -842,6 +842,7 @@ p + p{
 }
 
 .grid-loader div{
+  margin: 6;
   position: absolute;
   height: 1rem;
   width: 1rem;
