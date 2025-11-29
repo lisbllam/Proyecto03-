@@ -1,11 +1,11 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getDatabase, ref, set, push, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+import { getDatabase, ref, set, push, get } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-database.js";
 
 
 const firebaseConfig = {
   apiKey: "AIzaSyBG1R0lwhXCEr1uT-tlrtjGQt6yUIxitxk",
   authDomain: "landing-b43d8.firebaseapp.com",
-  databaseURL: "https://landing-page-79bb4-default-rtdb.firebaseio.com",
+  databaseURL: "https://landing-b43d8-default-rtdb.firebaseio.com",
   projectId: "landing-b43d8",
   storageBucket: "landing-b43d8.firebasestorage.app",
   messagingSenderId: "284355547407",
@@ -17,12 +17,12 @@ const app = initializeApp(firebaseConfig);
 
 const database = getDatabase(app);
 
-let saveVote = (productId) =>{
+let saveVote = (rateId) =>{
     const votesRef= ref(database, 'votes');
     const newVoteRef= push(votesRef);
 
     return set(newVoteRef, {
-        productId: productId,
+        rateId: rateId,
         timestamp: Date.now()
     })
     .then(() =>{

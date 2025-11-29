@@ -1,5 +1,6 @@
 "use strict";
 import {fetchProducts} from "./functions.js";
+import {saveVote, getVotes} from "./firebase.js";
 
 const renderProducts = () => {
     fetchProducts('/products.json')
